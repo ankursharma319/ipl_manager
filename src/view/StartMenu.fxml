@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StartMenuController">
+   <children>
+      <Button mnemonicParsing="false" onAction="#handlePlayClick" prefHeight="30.0" prefWidth="100.0" text="Play" AnchorPane.bottomAnchor="200.0" AnchorPane.rightAnchor="50.0" />
+      <Button mnemonicParsing="false" onAction="#handleSettingsClick" prefHeight="30.0" prefWidth="100.0" text="Settings" AnchorPane.bottomAnchor="125.0" AnchorPane.rightAnchor="50.0" />
+      <Button mnemonicParsing="false" onAction="#handleExitClick" prefHeight="30.0" prefWidth="100.0" text="Exit" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+   </children>
+</AnchorPane>

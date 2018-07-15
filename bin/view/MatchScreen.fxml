@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MatchScreenController">
+   <bottom>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <Label fx:id="scorelineLabel" text="Score: ">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <top>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <ImageView fx:id="channelLogoImageView" fitHeight="35.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" />
+            <ImageView fx:id="iplLogoImageView" fitHeight="35.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" />
+            <AnchorPane AnchorPane.leftAnchor="500.0">
+               <children>
+                  <ImageView fx:id="team1LogoImageView" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" />
+                  <ImageView fx:id="team2LogoImageView" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" />
+                  <Label fx:id="matchTitleLabel" text="Match # __ : __ _vs ___ live from ______" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <TabPane prefHeight="520.0" prefWidth="784.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab closable="false" text="Summary">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <TableView fx:id="twoBatsmenTableView" prefHeight="100.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="352.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                                <columns>
+                                  <TableColumn fx:id="_batsmanNameColumn" prefWidth="100.0" sortable="false" text="Batsman" />
+                                  <TableColumn fx:id="_batsmanTypeColumn" prefWidth="70.0" sortable="false" text="Type" />
+                                    <TableColumn fx:id="_battingRunsColumn" prefWidth="45.0" sortable="false" text="Runs" />
+                                    <TableColumn fx:id="_battingBallsColumn" prefWidth="45.0" sortable="false" text="Balls" />
+                                    <TableColumn fx:id="_battingDotsColumn" prefWidth="45.0" sortable="false" text="Dots" />
+                                    <TableColumn fx:id="_battingFoursColumn" prefWidth="45.0" sortable="false" text="Fours" />
+                                    <TableColumn fx:id="_battingSixesColumn" prefWidth="45.0" sortable="false" text="Sixes" />
+                                    <TableColumn fx:id="_battingSRColumn" prefWidth="75.0" sortable="false" text="Strike Rate" />
+                                    <TableColumn fx:id="_battingPointsColumn" prefWidth="75.0" sortable="false" text="Bat Points" visible="false" />
+                                </columns>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </TableView>
+                              <TableView fx:id="twoBowlersTableView" prefHeight="100.0" tableMenuButtonVisible="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+                                <columns>
+                                  <TableColumn fx:id="_bowlerNameColumn" prefWidth="75.0" sortable="false" text="Bowler" />
+                                    <TableColumn fx:id="_bowlerTypeColumn" prefWidth="70.0" sortable="false" text="Type" />
+                                    <TableColumn fx:id="_bowlingOversColumn" prefWidth="45.0" sortable="false" text="Overs" />
+                                    <TableColumn fx:id="_bowlingBallsColumn" prefWidth="45.0" sortable="false" text="Balls" visible="false" />
+                                    <TableColumn fx:id="_bowlingDotsColumn" prefWidth="45.0" sortable="false" text="Dots" />
+                                    <TableColumn fx:id="_bowlingMaidensColumn" prefWidth="55.0" sortable="false" text="Maidens" visible="false" />
+                                    <TableColumn fx:id="_bowlingRunsColumn" prefWidth="45.0" sortable="false" text="Runs" />
+                                    <TableColumn fx:id="_bowlingWicketsColumn" prefWidth="65.0" sortable="false" text="Wickets" />
+                                    <TableColumn fx:id="_bowlingFoursColumn" prefWidth="45.0" sortable="false" text="Fours" visible="false" />
+                                    <TableColumn fx:id="_bowlingSixesColumn" prefWidth="45.0" sortable="false" text="Sixes" visible="false" />
+                                    <TableColumn fx:id="_bowlingAverageColumn" prefWidth="60.0" sortable="false" text="Average" />
+                                    <TableColumn fx:id="_bowlingSRColumn" prefWidth="75.0" sortable="false" text="Strike Rate" />
+                                    <TableColumn fx:id="_bowlingEconomyColumn" prefWidth="60.0" sortable="false" text="Economy" />
+                                    <TableColumn fx:id="_bowlingPointsColumn" prefWidth="75.0" sortable="false" text="Bowl Points" visible="false" />
+                                </columns>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </TableView>
+                              <Label fx:id="last18DeliveriesLabel" text="Last 18 Deliveries: " AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="275.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="projectedOrTargetLabel" text="Target: " AnchorPane.topAnchor="375.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="crrLabel" text="Current Run Rate" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="325.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="rrrLabel" text="Required Run Rate" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="375.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="scoreLabel" text="Score: " AnchorPane.topAnchor="325.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="relativeTargetLabel" text="___ runs needed off ___ balls" AnchorPane.topAnchor="425.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="currentOverLabel" text="Current Over:" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="325.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="lastBallLabel" text="Last Ball: " AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="375.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab closable="false" text="Batting">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <TableView fx:id="battingCardTableView" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                <columns>
+                                  <TableColumn fx:id="battingPositionColumn" prefWidth="35.0" sortable="false" text="Pos." />
+                                    <TableColumn fx:id="batsmanNameColumn" prefWidth="100.0" sortable="false" text="Batsman" />
+                                    <TableColumn fx:id="batsmanPlayerTypeColumn" prefWidth="55.0" sortable="false" text="Type" />
+                                    <TableColumn fx:id="batsmanBattingTypeColumn" prefWidth="55.0" sortable="false" text="Bat Type" visible="false" />
+                                  <TableColumn fx:id="batsmanStatusColumn" prefWidth="100.0" sortable="false" text="Status" />
+                                    <TableColumn fx:id="battingRunsColumn" prefWidth="45.0" sortable="false" text="Runs" />
+                                    <TableColumn fx:id="battingBallsColumn" prefWidth="45.0" sortable="false" text="Balls" />
+                                    <TableColumn fx:id="battingDotsColumn" prefWidth="45.0" sortable="false" text="Dots" />
+                                    <TableColumn fx:id="battingFoursColumn" prefWidth="45.0" sortable="false" text="Fours" />
+                                    <TableColumn fx:id="battingSixesColumn" prefWidth="45.0" sortable="false" text="Sixes" />
+                                    <TableColumn fx:id="battingSRColumn" prefWidth="75.0" sortable="false" text="Strike Rate" />
+                                    <TableColumn fx:id="battingPointsColumn" prefWidth="75.0" sortable="false" text="Bat Points" visible="false" />
+                                </columns>
+                              </TableView>
+                              <Label fx:id="battingCardTitle" text="Batting Team: " AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="belowBattingCardLabel" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Bowling">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="bowlingCardTableView" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                <columns>
+                                    <TableColumn fx:id="bowlerNameColumn" prefWidth="100.0" sortable="false" text="Bowler" />
+                                    <TableColumn fx:id="bowlerPlayerTypeColumn" prefWidth="50.0" sortable="false" text="Type" visible="false" />
+                                  <TableColumn fx:id="bowlerBowlingTypeColumn" prefWidth="70.0" sortable="false" text="Bowl Type" />
+                                    <TableColumn fx:id="bowlingOversColumn" prefWidth="45.0" sortable="false" text="Overs" />
+                                    <TableColumn fx:id="bowlingBallsColumn" prefWidth="45.0" sortable="false" text="Balls" visible="false" />
+                                    <TableColumn fx:id="bowlingDotsColumn" prefWidth="45.0" sortable="false" text="Dots" />
+                                    <TableColumn fx:id="bowlingMaidensColumn" prefWidth="55.0" sortable="false" text="Maidens" visible="false" />
+                                    <TableColumn fx:id="bowlingRunsColumn" prefWidth="45.0" sortable="false" text="Runs" />
+                                    <TableColumn fx:id="bowlingWicketsColumn" prefWidth="65.0" sortable="false" text="Wickets" />
+                                    <TableColumn fx:id="bowlingFoursColumn" prefWidth="45.0" sortable="false" text="Fours" visible="false" />
+                                    <TableColumn fx:id="bowlingSixesColumn" prefWidth="45.0" sortable="false" text="Sixes" visible="false" />
+                                    <TableColumn fx:id="bowlingAverageColumn" prefWidth="60.0" sortable="false" text="Average" />
+                                    <TableColumn fx:id="bowlingSRColumn" prefWidth="75.0" sortable="false" text="Strike Rate" />
+                                    <TableColumn fx:id="bowlingEconomyColumn" prefWidth="60.0" sortable="false" text="Economy" />
+                                    <TableColumn fx:id="bowlingPointsColumn" prefWidth="75.0" sortable="false" text="Bowl Points" visible="false" />
+                                </columns>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </TableView>
+                              <GridPane gridLinesVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label fx:id="fow8" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="fow1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="fow2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="fow3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="fow4" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="fow6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="fow7" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="fow9" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="fow5" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                    <Label fx:id="fow10" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                 </children>
+                              </GridPane>
+                              <Label text="Fall of wickets" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="0.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <GridPane prefWidth="300.0" vgap="5.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="20.0" top="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <AnchorPane GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <children>
+                  <Label prefHeight="20.0" text="A: " AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="40.0" />
+                  <Label prefHeight="20.0" text="F: " AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="40.0" />
+                  <ImageView fx:id="batsmanImage1" fitHeight="105.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  <Label fx:id="batsmanNameLabel1" prefHeight="20.0" prefWidth="100.0" text="Batsman On Strike" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  <ProgressBar fx:id="settledProgressBar1" prefHeight="15.0" prefWidth="100.0" progress="0.0" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="10.0" />
+                  <ImageView fx:id="batsmanPlayerTypeImageView1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="10.0" />
+                  <Label fx:id="batsmanTypeLabel1" prefHeight="20.0" text="NaN" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="10.0" />
+                  <Slider fx:id="agressionSlider1" prefWidth="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                  <Label fx:id="batsmanScoreLabel1" prefHeight="20.0" prefWidth="45.0" text="00(00)*" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="40.0" />
+                  <Label fx:id="batsmanFormLabel1" prefHeight="20.0" prefWidth="20.0" text="00" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
+                  <Label prefHeight="15.0" prefWidth="50.0" text="Settled" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="125.0" />
+                  <Label fx:id="batsmanAbilityLabel1" prefHeight="20.0" prefWidth="20.0" text="00" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="40.0" />
+                  <Label prefHeight="15.0" prefWidth="50.0" text="Agression" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="125.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleBackToMenuClick" prefHeight="25.0" prefWidth="100.0" text="Back to Menu" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0" />
+                  <Button fx:id="nextBallButton" mnemonicParsing="false" onAction="#handleNextBallClick" prefHeight="30.0" prefWidth="100.0" text="Next Ball" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="10.0" />
+                  <Button fx:id="nextOverButton" mnemonicParsing="false" onAction="#handleNextOverClick" prefHeight="30.0" prefWidth="100.0" text="Next Over" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" />
+                  <AnchorPane AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Label text="Pace" AnchorPane.topAnchor="10.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Swing" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="10.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Slow" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="10.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Spin" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="spinLabel" text="Spin" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="slownessLabel" text="Slow" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="30.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="swingLabel" text="Swing" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="30.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="paceLabel" text="Pace" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="30.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="batsmanChooseComboBox" prefWidth="110.0" promptText="Next Batsman" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="5.0" />
+                        <Button fx:id="batsmanChooseOKButton" mnemonicParsing="false" onAction="#handleBatsmanChooseComboBoxOKClick" text="OK" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="5.0" />
+                     </children></AnchorPane>
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </AnchorPane>
+            <AnchorPane GridPane.rowIndex="1">
+               <children>
+                  <ImageView fx:id="batsmanImage2" fitHeight="105.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  <Label fx:id="batsmanNameLabel2" prefHeight="20.0" prefWidth="100.0" text="Batsman Non Striker" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  <ProgressBar fx:id="settledProgressBar2" prefHeight="15.0" prefWidth="100.0" progress="0.0" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="10.0" />
+                  <ImageView fx:id="batsmanPlayerTypeImageView2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="10.0" />
+                  <Slider fx:id="agressionSlider2" prefWidth="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                  <Label fx:id="batsmanScoreLabel2" prefHeight="20.0" prefWidth="45.0" text="00(00)*" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="40.0" />
+                  <Label fx:id="batsmanFormLabel2" prefHeight="20.0" prefWidth="20.0" text="00" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
+                  <Label prefHeight="15.0" prefWidth="50.0" text="Settled" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="125.0" />
+                  <Label fx:id="batsmanAbilityLabel2" prefHeight="20.0" prefWidth="20.0" text="00" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="40.0" />
+                  <Label prefHeight="15.0" prefWidth="50.0" text="Agression" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="125.0" />
+                  <Label fx:id="batsmanTypeLabel2" prefHeight="20.0" text="NaN" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="10.0" />
+                  <Label prefHeight="20.0" text="F: " AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="40.0" />
+                  <Label prefHeight="20.0" text="A: " AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="40.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.rowIndex="2">
+               <children>
+                  <ComboBox fx:id="bowlerChooseComboBox" prefWidth="115.0" promptText="Change Bowler..." visibleRowCount="5" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="50.0" />
+                  <ImageView fx:id="bowlerImage" fitHeight="105.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  <Label fx:id="bowlerNameLabel" prefHeight="20.0" prefWidth="100.0" text="Bowler" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  <ImageView fx:id="bowlerPlayerTypeImageView" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="10.0" />
+                  <Slider fx:id="bowlerAgressionSlider" prefWidth="100.0" AnchorPane.bottomAnchor="45.0" AnchorPane.rightAnchor="10.0" />
+                  <Label fx:id="bowlerTypeLabel" prefHeight="20.0" text="NaN" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="10.0" />
+                  <Label fx:id="bowlerFiguresLabel" prefHeight="20.0" prefWidth="60.0" text="0.0-0-0-0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="40.0" />
+                  <Label fx:id="bowlingFormLabel" prefHeight="20.0" prefWidth="20.0" text="00" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
+                  <Label fx:id="bowlingAbilityLabel" prefHeight="20.0" prefWidth="20.0" text="00" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="40.0" />
+                  <Label prefHeight="15.0" prefWidth="50.0" text="Agression" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="125.0" />
+                  <Button fx:id="bowlerChooseOKButton" mnemonicParsing="false" onAction="#handleBowlerChooseComboBoxOKClick" text="OK" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="10.0" />
+                  <Label prefHeight="20.0" text="F: " AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="40.0" />
+                  <Label prefHeight="20.0" text="A: " AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="40.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </right>
+</BorderPane>

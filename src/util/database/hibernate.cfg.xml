@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+<property name="hibernate.connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
+<property name="hibernate.connection.url">jdbc:derby:resources/data/database/IPLManagerDatabase;create=true</property>
+<property name="hibernate.connection.username">root</property>
+<property name="hibernate.connection.password"></property>
+<property name="hibernate.connection.pool_size">10</property>
+<property name="show_sql">true</property>
+<property name="dialect">org.hibernate.dialect.DerbyTenSevenDialect</property>
+<property name="hibernate.current_session_context_class">thread</property>
+
+<property name="hbm2ddl.auto">create</property>
+
+<mapping class="model.player.Player"/>
+<mapping class="model.player.details.CareerDetails"/>
+<mapping class="model.player.details.TournamentDetails"/>
+<mapping class="model.player.details.GeneralDetails"/>
+<mapping class="model.player.details.MatchDetails"/>
+<mapping class="model.player.details.PlayerCurrentTeamCareerDetails"/>
+<mapping class="model.player.bowling.BowlingFigure"/>
+<mapping class="model.team.Team"/>
+<mapping class="model.team.TeamRecords"/>
+<mapping class="model.team.TeamMatchDetails"/>
+<mapping class="model.team.TeamTournamentDetails"/>
+<mapping class="model.match.Match"/>
+<mapping class="model.match.Stadium"/>
+<mapping class="model.tournament.Tournament"/>
+
+</session-factory>
+</hibernate-configuration>
